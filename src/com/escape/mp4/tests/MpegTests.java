@@ -18,6 +18,7 @@ package com.escape.mp4.tests;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.RandomAccessFile;
 
 import org.junit.Test;
@@ -42,6 +43,14 @@ import com.escape.iso.data.Track;
 import com.escape.iso.data.Unmarshal;
 
 public class MpegTests {
+	private static String PATH;
+
+	static {
+		try {
+			PATH = new File(".").getCanonicalPath() + "/src/com/escape/mp4/tests/";
+		} catch (IOException e) {
+		}
+	}
 	static final class Tester implements ParseCallback {
 		int counter;
 		boolean gotstart;
@@ -94,14 +103,15 @@ public class MpegTests {
 	}
 	@Test
 	public void boxTreeDump() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox-pull.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		//final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox-pull.m4b");
 		assertTrue("exists failed", fx.exists());
 		final ParseCallback tx = new BoxTreeDump();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);
 	}
 	@Test
 	public void accessTextTrackSamples() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler();
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -141,7 +151,7 @@ public class MpegTests {
 	}
 	@Test
 	public void accessTextTrackSamplesAuphonic() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/auphonic_chapters_demo.m4a");
+		final File fx = new File(PATH + "auphonic_chapters_demo.m4a");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler();
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -180,7 +190,7 @@ public class MpegTests {
 	}
 	@Test
 	public void chunkForSample() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler();
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -257,7 +267,7 @@ public class MpegTests {
 	}
 	@Test
 	public void flameTestM4B() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final Tester tx = new Tester();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);
@@ -284,7 +294,7 @@ public class MpegTests {
 	}
 	@Test
 	public void flameTestAuphonic() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/auphonic_chapters_demo.m4a");
+		final File fx = new File(PATH + "auphonic_chapters_demo.m4a");
 		assertTrue("exists failed", fx.exists());
 		final Tester tx = new Tester();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);

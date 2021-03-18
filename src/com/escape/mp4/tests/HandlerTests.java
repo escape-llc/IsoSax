@@ -3,6 +3,7 @@ package com.escape.mp4.tests;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.junit.Test;
 
@@ -14,9 +15,17 @@ import com.escape.iso.data.Handler_V0;
 import com.escape.iso.data.IsoMediaContainer;
 
 public class HandlerTests {
+	private static String PATH;
+
+	static {
+		try {
+			PATH = new File(".").getCanonicalPath() + "/src/com/escape/mp4/tests/";
+		} catch (IOException e) {
+		}
+	}
 	@Test
 	public void isoContainerHandler_Default() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler();
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -41,7 +50,7 @@ public class HandlerTests {
 	}
 	@Test
 	public void isoContainerHandler_Meta() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler(false, true, null);
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -58,7 +67,7 @@ public class HandlerTests {
 	}
 	@Test
 	public void isoContainerHandler_Tracks() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final IsoContainerHandler tx = new IsoContainerHandler(true, false, null);
 		ISOParser.parse(fx, new NullHandler(), tx);
@@ -82,7 +91,7 @@ public class HandlerTests {
 	}
 	@Test
 	public void isoContainerHandler_Tracks_Selector() throws Exception {
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		// only materialize text tracks
 		final TrackHandler.Selector text = new TrackHandler.Selector() {
