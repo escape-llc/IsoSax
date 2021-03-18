@@ -104,7 +104,6 @@ public class MpegTests {
 	@Test
 	public void boxTreeDump() throws Exception {
 		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
-		//final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox-pull.m4b");
 		assertTrue("exists failed", fx.exists());
 		final ParseCallback tx = new BoxTreeDump();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);
@@ -280,8 +279,7 @@ public class MpegTests {
 	}
 	@Test
 	public void flameTestM4B2() throws Exception {
-		//final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox.m4b");
-		final File fx = new File("c:/users/johng/downloads/AdventuresOfTomSawyer-32kb-Part1_librivox-pull.m4b");
+		final File fx = new File(PATH + "AdventuresOfTomSawyer-32kb-Part2_librivox.m4b");
 		assertTrue("exists failed", fx.exists());
 		final Tester tx = new Tester();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);
