@@ -427,7 +427,7 @@ public class BoxDataFactory {
 	 * @param box  Box to unmarshal.
 	 * @param raf Source of bytes.
 	 * @return !NULL: unmarshalled; NULL: nothing registered.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	public static Object create(Box box, RandomAccessFile raf) throws Exception {
 		String key = box.type;
@@ -450,7 +450,7 @@ public class BoxDataFactory {
 	 * @param boxpos position of this box.
 	 * @param raf source of bytes.
 	 * @return new instance.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	public static Box extractBox(Box parent, long boxpos, RandomAccessFile raf) throws Exception {
 		final byte[] lengthandtype = new byte[8];

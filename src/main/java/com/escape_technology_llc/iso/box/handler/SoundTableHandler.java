@@ -35,7 +35,7 @@ public class SoundTableHandler implements ParseCallback, RenderInstance<SoundTab
 	ChunkOffset stco;
 	/**
 	 * Produce the domain object for this handler.
-	 * @return
+	 * @return new instance.
 	 */
 	public SoundTable render() {
 		return new SoundTable(stsd, stsc, stts, stss, stsz, stco);

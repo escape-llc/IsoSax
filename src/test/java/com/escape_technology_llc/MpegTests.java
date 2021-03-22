@@ -47,7 +47,7 @@ public class MpegTests {
 
 	static {
 		try {
-			PATH = new File(".").getCanonicalPath() + "/src/com/escape/mp4/tests/";
+			PATH = new File(".").getCanonicalPath() + "\\target\\test-classes\\";
 		} catch (IOException e) {
 		}
 	}
@@ -305,7 +305,7 @@ public class MpegTests {
 	}
 	@Test
 	public void flameTestVideo2() throws Exception {
-		final File fx = new File("c:/users/johng/videos/Indulgence.mp4");
+		final File fx = new File(PATH + "Sample MP4 Video File Download.mp4");
 		assertTrue("exists failed", fx.exists());
 		final Tester tx = new Tester();
 		ISOParser.parse(fx, new ConsoleHandler(), tx);

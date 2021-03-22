@@ -53,6 +53,7 @@ public class IsoContainerHandler implements ParseCallback, RenderInstance<IsoMed
 	 * Default ctor.
 	 * All collection flags are TRUE.
 	 * Use given track selector.
+	 * @param ps the selector.
 	 */
 	public IsoContainerHandler(Selector ps) {
 		this.ps = ps;
@@ -62,6 +63,7 @@ public class IsoContainerHandler implements ParseCallback, RenderInstance<IsoMed
 	 * Set collection flags.
 	 * @param trak true: collect tracks.
 	 * @param meta true: collect top-level metadata.
+	 * @param ps the selector.
 	 */
 	public IsoContainerHandler(boolean trak, boolean meta, Selector ps) {
 		flags[IDX_TRAK] = trak;

@@ -183,18 +183,18 @@ public class Box {
 	}
 	/**
 	 * Return position of the first data byte after the header.
-	 * @return
+	 * @return new offset.
 	 */
 	public long dataPosition() { return position + hdrsize; }
 	/**
 	 * Return the length of the data in this box.
-	 * @return
+	 * @return length of box.
 	 */
 	public long dataLength() { return length - hdrsize; }
 	/**
 	 * Return the tree level of this box.
 	 * Root level is zero.
-	 * @return
+	 * @return box level.
 	 */
 	public int level() {
 		if(parent == null) return 0;
@@ -263,7 +263,7 @@ public class Box {
 	}
 	/**
 	 * Return whether the given box contains boxes for decomposition.
-	 * @param box
+	 * @param box source box.
 	 * @return true: can decompose; false: no more boxes.
 	 */
 	public static boolean hasBoxes(Box box) {
@@ -271,7 +271,7 @@ public class Box {
 	}
 	/**
 	 * Return whether the given box is in the list of ISO Part 12 top-level boxes.
-	 * @param type
+	 * @param type box type.
 	 * @return true: top-level; false: not.
 	 */
 	public static boolean isTopLevel(String type) {

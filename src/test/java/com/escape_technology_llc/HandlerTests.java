@@ -19,7 +19,8 @@ public class HandlerTests {
 
 	static {
 		try {
-			PATH = new File(".").getCanonicalPath() + "/src/com/escape/mp4/tests/";
+			PATH = new File(".").getCanonicalPath() + "\\target\\test-classes\\";
+			System.out.println(String.format("path='%s'", PATH));
 		} catch (IOException e) {
 		}
 	}

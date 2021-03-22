@@ -153,8 +153,9 @@ public class ISOParser {
 	/**
 	 * Parse the ISO container file, pass each top-level box to given callback.
 	 * @param fx Source ISO container file.
+	 * @param eh Handler to use.
 	 * @param pc Parse callback.
-	 * @throws Exception
+	 * @throws Exception Invalid arguments.
 	 */
 	public static void parse(File fx, ParseHandler eh, ParseCallback pc) throws Exception {
 		if(fx == null)
@@ -176,15 +177,15 @@ public class ISOParser {
 	}
 	/**
 	 * Convert 16.16 fixed-point to float.
-	 * @param val
-	 * @return
+	 * @param val value to convert.
+	 * @return converted to float.
 	 */
 	public static float toFloat_1616(int val) {
 		return ((float) val) / 65536.0f;
 	}
 	/**
 	 * Format duration in MS into hr:mn:sc
-	 * @param millis
+	 * @param millis number of MS.
 	 * @return formatted value.
 	 */
 	public static String formatDuration(final long millis) {
@@ -196,7 +197,7 @@ public class ISOParser {
 	}
 	/**
 	 * Format duration in MS into hr:mn:sc.xxx
-	 * @param millis
+	 * @param millis number of MS.
 	 * @param forcems true: force MS display; false: leave off if zero.
 	 * @return formatted value.
 	 */

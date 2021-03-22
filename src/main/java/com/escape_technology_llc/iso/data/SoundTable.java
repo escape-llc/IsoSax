@@ -162,8 +162,8 @@ public class SoundTable {
 	}
 	/**
 	 * Take the sample coordinate and compute the media coordinate.
-	 * @param sc
-	 * @return
+	 * @param sc source coordinate.
+	 * @return new instance.
 	 */
 	public MediaCoordinate resolve(SampleCoordinate sc) {
 		if(stco == null)
@@ -179,7 +179,7 @@ public class SoundTable {
 	/**
 	 * Convenience method to go from sample to media coordinate.
 	 * @param sample sample (1-relative)
-	 * @return
+	 * @return new instance.
 	 */
 	public MediaCoordinate resolve(int sample) {
 		final SampleCoordinate sc = chunkForSample(sample);

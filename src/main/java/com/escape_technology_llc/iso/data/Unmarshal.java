@@ -76,19 +76,20 @@ public final class Unmarshal {
 	}
 	/**
 	 * Extract bytes in network order to String[4].
-	 * @param raf
-	 * @return
-	 * @throws Exception
+	 * @param buf input buffer.
+	 * @param offset buffer offset.
+	 * @return new instance.
+	 * @throws Exception on errors.
 	 */
 	public static String getType(byte[] buf, int offset) throws Exception {
 		return new String(buf, offset, 4, ENCODING);
 	}
 	/**
 	 * NUL-terminated string ala C.
-	 * @param buf
-	 * @param offset
-	 * @return
-	 * @throws Exception
+	 * @param buf input buffer.
+	 * @param offset buffer offset.
+	 * @return new instance.
+	 * @throws Exception on errors.
 	 */
 	public static String getString(byte[] buf, int offset) throws Exception {
 		for(int ix = offset; ix < buf.length; ix++) {
@@ -102,10 +103,10 @@ public final class Unmarshal {
 	}
 	/**
 	 * Length-prefixed string ala Pascal.
-	 * @param buf
-	 * @param offset
-	 * @return
-	 * @throws Exception
+	 * @param buf input buffer.
+	 * @param offset buffer offset.
+	 * @return new instance.
+	 * @throws Exception on errors.
 	 */
 	public static String getPascalString(byte[] buf, int offset) throws Exception {
 		final int lg = (int)buf[offset];
@@ -115,9 +116,10 @@ public final class Unmarshal {
 	}
 	/**
 	 * Extract bytes in network order to String[4].
-	 * @param raf
-	 * @return
-	 * @throws Exception
+	 * @param raf source file.
+	 * @param buf target buffer.
+	 * @return new instance.
+	 * @throws Exception on errors.
 	 */
 	public static String getType(RandomAccessFile raf, byte[] buf) throws Exception {
 		raf.readFully(buf);

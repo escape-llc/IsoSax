@@ -23,17 +23,17 @@ package com.escape_technology_llc.iso;
 public interface ParseHandler {
 	/**
 	 * Message report.
-	 * @param msg
+	 * @param msg The message to report.
 	 */
 	void message(String msg);
 	/**
 	 * Warning report.
-	 * @param ex
+	 * @param ex The exception to report.
 	 */
 	void warning(Exception ex);
 	/**
 	 * Error report.
-	 * @param ex
+	 * @param ex The exception to report.
 	 */
 	void error(Exception ex);
 }

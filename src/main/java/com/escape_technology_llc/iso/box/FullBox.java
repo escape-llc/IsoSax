@@ -100,7 +100,7 @@ public class FullBox extends Box {
 	}
 	/**
 	 * Return whether the given type requires a full box.
-	 * @param type
+	 * @param type box type.
 	 * @return true: full box; false: not.
 	 */
 	public static boolean isFull(String type) {

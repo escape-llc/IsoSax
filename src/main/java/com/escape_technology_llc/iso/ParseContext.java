@@ -27,27 +27,28 @@ public interface ParseContext {
 	 * Skip given box header and recursively parse the contents of the box.
 	 * @param box Source box to parse.
 	 * @param pc Callback to use for parsing.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	void parseBox(Box box, ParseCallback pc) throws Exception;
 	/**
 	 * Materialize the bytes of data as indicated.
-	 * @param position
-	 * @param length
-	 * @return
-	 * @throws Exception
+	 * @param position buffer position.
+	 * @param length number of bytes.
+	 * @return new buffer.
+	 * @throws Exception on errors.
 	 */
 	byte[] materialize(long position, int length) throws Exception;
 	/**
 	 * Attempt to create an object from the box contents.
-	 * @param box
+	 * @param <T> Type of box to create.
+	 * @param box source box.
 	 * @return !NULL: instance; NULL: no instance.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	<T> T create(Box box) throws Exception;
 	/**
 	 * Get the exception handler for the context.
-	 * @return
+	 * @return instance.
 	 */
 	ParseHandler handler();
 }

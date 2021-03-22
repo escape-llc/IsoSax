@@ -32,14 +32,14 @@ public interface ParseCallback {
 	 * Signal a box has been detected.
 	 * @param pc parse context.
 	 * @param box source box.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	void box(ParseContext pc, Box box) throws Exception;
 	/**
 	 * Signal end of processing.
 	 * No other callbacks will occur after this returns.
 	 * @param pc parse context.
-	 * @throws Exception
+	 * @throws Exception on errors.
 	 */
 	void end(ParseContext pc) throws Exception;
 }
