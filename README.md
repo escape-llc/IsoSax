@@ -8,7 +8,6 @@ For example, a perfectly good M4B file gets declared "invalid" because it had a 
 Then there's the obsession with representing every last byte of a media file, when all you want is the metadata.
 
 # Features
-
 * Cherry-pick the bits you want
 * Not concerned with saving
 * Android-safe!
@@ -16,3 +15,10 @@ Then there's the obsession with representing every last byte of a media file, wh
 * Small and fast
 * Not concerned with validating file type, etc.
 * Don't want to know about "boxes"? Comes with common scenarios covered for you
+
+# Maven Central
+We are publishing Java packages to Maven Central; here is the info for this artifact:
+
+* group: **com.escape-technology-llc**
+* artifact: **IsoSax**
+* version: **SNAPSHOT-1.0**
