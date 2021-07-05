@@ -24,4 +24,4 @@ We are publishing Java packages to Maven Central; here is the info for this arti
 
 * group: **com.escape-technology-llc**
 * artifact: **IsoSax**
-* version: **SNAPSHOT-1.0**
+* version: **1.0-SNAPSHOT**
