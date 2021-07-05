@@ -1,6 +1,9 @@
 # IsoSax
 ISO SAX is a callback-based parser for ISO container files (ISO/IEC 14496-12), e.g. MPEG-4.
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.escape-technology-llc/IsoSax/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.escape-technology-llc/IsoSax)
+
+
 The libraries that are out there either won't run on Android, have many megabytes of dependent JARs, or will fail to parse your favorite media file due to a "technicality" it thinks it is mal-formed.
 
 For example, a perfectly good M4B file gets declared "invalid" because it had a video track in it (the album art), along with the sound track. Really!? Don't let these libraries "judge" the format and lock you out!
